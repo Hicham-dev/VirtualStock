@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta charset="utf-8" />
+  <title>virtual stock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"
+  />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta content="" name="description" />
+  <meta content="" name="author" />
+
+  <link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-- start table-->
+  <link href="assets/plugins/jquery-datatable/media/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min.css" rel="stylesheet"
+    type="text/css" />
+  <link href="assets/plugins/datatables-responsive/css/datatables.responsive.css" rel="stylesheet" type="text/css" media="screen"
+  />
+  <!-- end table-->
+  <!-- start wedget-->
+  <link href="assets/plugins/jquery-metrojs/MetroJs.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-- end wedget-->
+
+    <link href="assets/plugins/ion-slider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="assets/plugins/ion-slider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css" media="screen" />
+ 
+  <link href="pages/css/pages-icons.css" rel="stylesheet" type="text/css">
+  <link class="main-stylesheet" href="pages/css/pages.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="fixed-header ">
+  <!-- BEGIN SIDEBPANEL-->
+  <nav class="page-sidebar" data-pages="sidebar">
+    <!-- BEGIN SIDEBAR MENU TOP TRAY CONTENT-->
+    <div class="sidebar-overlay-slide from-top" id="appMenu">
+      <div class="row">
+        <div class="col-xs-6 m-t-20 no-padding">
+          <a href="#" class="p-l-40"><img src="assets/img/demo/calendar_app.svg" alt="socail">
+          </a>
+        </div>
+        <div class="col-xs-6 m-t-20 no-padding">
+          <a href="#" class="p-l-10"><img src="assets/img/demo/add_more.svg" alt="socail">
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- END SIDEBAR MENU TOP TRAY CONTENT-->
+
+    <!-- BEGIN SIDEBAR MENU HEADER-->
+    <div class="sidebar-header">
+      <!-- logo -->
+      <img src="assets/img/logo.png" alt="logo" class="brand" data-src="assets/img/logo.png" data-src-retina="assets/img/logo.png"
+        width="80">
+      <!--end logo -->
+      <div class="sidebar-header-controls">
+        <button type="button" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20" data-pages-toggle="#appMenu"><i class="fa fa-angle-down fs-16"></i>
+          </button>
+        <button type="button" class="btn btn-link visible-lg-inline" data-toggle-pin="sidebar"><i class="fa fs-12"></i>
+          </button>
+      </div>
+    </div>
+    <!-- END SIDEBAR MENU HEADER-->
+
+    <!-- START SIDEBAR MENU -->
+    <div class="sidebar-menu">
+      <!-- BEGIN SIDEBAR MENU ITEMS-->
+      <ul class="menu-items">
+        <li class="m-t-30 ">
+          <a href="index.html" class="detailed">
+            <span class="title">Dashboard</span>
+          </a>
+          <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <!-- END SIDEBAR MENU -->
+  </nav>
+  <!-- END SIDEBAR -->
+  <!-- END SIDEBPANEL-->
+
+
+
+  <div class="page-container ">
+    <!-- START HEADER -->
+    <div class="header ">
+      <!-- START MOBILE CONTROLS -->
+      <div class="container-fluid relative">
+        <!-- LEFT SIDE -->
+        <div class="pull-left full-height visible-sm visible-xs">
+          <!-- START ACTION BAR -->
+          <div class="header-inner">
+            <a href="#" class="btn-link toggle-sidebar visible-sm-inline-block visible-xs-inline-block padding-5" data-toggle="sidebar">
+              <span class="icon-set menu-hambuger"></span>
+            </a>
+          </div>
+          <!-- END ACTION BAR -->
+        </div>
+        <div class="pull-center hidden-md hidden-lg">
+          <div class="header-inner">
+            <div class="brand inline">
+              <!--logo mobil -->
+              <img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" data-src-retina="assets/img/logo_2x.png" width="80">
+              <!-- end logo mobil -->
+            </div>
+          </div>
+        </div>
+        <!-- RIGHT SIDE -->
+        <div class="pull-right full-height visible-sm visible-xs">
+          <!-- START ACTION BAR -->
+          <div class="header-inner">
+            <a href="#" class="btn-link visible-sm-inline-block visible-xs-inline-block" data-toggle="quickview" data-toggle-element="#quickview">
+              <span class="icon-set menu-hambuger-plus"></span>
+            </a>
+          </div>
+          <!-- END ACTION BAR -->
+        </div>
+      </div>
+      <!-- END MOBILE CONTROLS -->
+      <div class=" pull-left sm-table hidden-xs hidden-sm">
+        <div class="header-inner">
+          <!-- logo -->
+          <div class="brand inline">
+            <img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" data-src-retina="assets/img/logo_2x.png" width="90">
+          </div>
+          <!-- end logo -->
+          <!-- START NOTIFICATION LIST -->
+          <ul class="notification-list no-margin hidden-sm hidden-xs b-grey b-l b-r no-style p-l-30 p-r-20">
+            <li class="p-r-15 inline">
+              <div class="dropdown">
+                <a href="javascript:;" id="notification-center" class="icon-set globe-fill" data-toggle="dropdown">
+                  <span class="bubble"></span>
+                </a>
+                <!-- START Notification Dropdown -->
+                <div class="dropdown-menu notification-toggle" role="menu" aria-labelledby="notification-center">
+                  <!-- START Notification -->
+                  <div class="notification-panel">
+                    <!-- START Notification Body-->
+                    <div class="notification-body scrollable">
+                      <!-- START Notification Item-->
+                      <div class="notification-item unread clearfix">
+                        <!-- START Notification Item-->
+                        <div class="heading open">
+                        </div>
+                        <!-- END Notification Item-->
+                        <!-- START Notification Item Right Side-->
+                        <div class="option" data-toggle="tooltip" data-placement="left" title="mark as read">
+                          <a href="#" class="mark"></a>
+                        </div>
+                        <!-- END Notification Item Right Side-->
+                      </div>
+                      <!-- END Notification Item-->
+                    </div>
+                    <!-- END Notification Body-->
+                    <!-- START Notification Footer-->
+                    <div class="notification-footer text-center">
+                      <a href="#" class="">Read all notifications</a>
+                      <a data-toggle="refresh" class="portlet-refresh text-black pull-right" href="#">
+                        <i class="pg-refresh_new"></i>
+                      </a>
+                    </div>
+                    <!-- START Notification Footer-->
+                  </div>
+                  <!-- END Notification -->
+                </div>
+                <!-- END Notification Dropdown -->
+              </div>
+            </li>
+            <li class="p-r-15 inline">
+              <a href="#" class="icon-set clip "></a>
+            </li>
+            <li class="p-r-15 inline">
+              <a href="#" class="icon-set grid-box"></a>
+            </li>
+          </ul>
+          <!-- END NOTIFICATIONS LIST -->
+          <!-- recherche -->
+          <a href="#" class="search-link" data-toggle="search"><i class="pg-search"></i>Type anywhere to <span class="bold">search</span></a></div>
+      </div>
+      <div class=" pull-right">
+        <!-- START User Info-->
+        <div class="visible-lg visible-md m-t-10">
+          <div class="pull-left p-r-10 p-t-10 fs-16 font-heading">
+            <span class="semi-bold">David</span> <span class="text-master">Nest</span>
+          </div>
+          <div class="dropdown pull-right">
+            <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="thumbnail-wrapper d32 circular inline m-t-5">
+                <img src="assets/img/profiles/avatar.jpg" alt="" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar_small2x.jpg" width="32" height="32">
+            </span>
+              </button>
+            <ul class="dropdown-menu profile-dropdown" role="menu">
+              <li><a href="#"><i class="pg-settings_small"></i> Settings</a>
+              </li>
+              <li><a href="#"><i class="pg-outdent"></i> Feedback</a>
+              </li>
+              <li><a href="#"><i class="pg-signals"></i> Help</a>
+              </li>
+              <li class="bg-master-lighter">
+                <a href="#" class="clearfix">
+                  <span class="pull-left">Logout</span>
+                  <span class="pull-right"><i class="pg-power"></i></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- END User Info-->
+      </div>
+    </div>
+    <!-- END HEADER -->
+    <!-- END PAGE CONTENT WRAPPER -->
+
+
+    <div class="page-content-wrapper ">
+      <!-- START PAGE CONTENT -->
+      <div class="content ">
+        <!-- START CONTAINER FLUID -->
+
+  <div class="container-fluid container-fixed-lg">
+          <ul class="breadcrumb">
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li><a href="#" class="active">Plain template</a>
+            </li>
+          </ul>
+          <!-- END BREADCRUMB -->
+        </div>
+
+        
+        <div class="container-fluid container-fixed-lg">
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <h3> Id Produit</h3><br>
+                  <h1><b> MON PRODUIT</b></h1><br>
+                  <h5>Description</h5><br>
+                  <div class="panel-title">Option1:valeur
+                  </div><br>
+                  <div class="panel-title">Option1:valeur
+                  </div><br>
+                  <div class="panel-title">Option1:valeur
+                  </div><br>
+                  <div class="panel-title">Option1:valeur
+                  </div><br>
+                  <div class="panel-title">Option1:valeur
+                  </div><br>
+                  <div class="panel-title">Option1:valeur
+                  </div><br>
+                  <div class="panel-title">Option1:valeur
+                  </div>
+                  <br><br>
+
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="widget-9 panel no-border bg-primary no-margin widget-loader-bar">
+                        <div class="container-xs-height full-height">
+                          <div class="row-xs-height">
+                            <div class="col-xs-height col-top">
+                              <div class="panel-heading  top-left top-right">
+                                <div class="panel-title text-black">
+                                  <span class="font-montserrat fs-11 all-caps">QUANTITE <i class="fa fa-chevron-right"></i>
+                              </span>
+                                </div>
+                                <div class="panel-controls">
+                                  <ul>
+                                    <li><a href="#" class="portlet-refresh text-black" data-toggle="refresh"><i class="portlet-icon portlet-icon-refresh"></i></a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row-xs-height">
+                            <div class="col-xs-height col-top">
+                              <div class="p-l-20 p-t-15">
+                                <h3 class="no-margin p-b-5 text-white">$23,000</h3>
+                                <a href="#" class="btn-circle-arrow text-white"><i class="pg-arrow_minimize"></i>
+                            </a>
+                                <span class="small hint-text">65% lower than last month</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row-xs-height">
+                            <div class="col-xs-height col-bottom">
+                              <div class="progress progress-small m-b-20">
+                                <div class="progress-bar progress-bar-white" style="width:45%"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <div class="widget-8 panel no-border bg-success no-margin widget-loader-bar">
+                        <div class="container-xs-height full-height">
+                          <div class="row-xs-height">
+                            <div class="col-xs-height col-top">
+                              <div class="panel-heading top-left top-right">
+                                <div class="panel-title text-black hint-text">
+                                  <span class="font-montserrat fs-11 all-caps">PRIXD D'UNUTE <i class="fa fa-chevron-right"></i>
+                              </span>
+                                </div>
+                                <div class="panel-controls">
+                                  <ul>
+                                    <li>
+                                      <a data-toggle="refresh" class="portlet-refresh text-black" href="#"><i class="portlet-icon portlet-icon-refresh"></i></a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row-xs-height ">
+                            <div class="col-xs-height col-top relative">
+                              <div class="row">
+                                <div class="col-sm-6">
+                                  <div class="p-l-20">
+                                    <h3 class="no-margin p-b-5 text-white">14,000 dh</h3>
+                                    <p class="small hint-text m-t-5">
+                                      <span class="label  font-montserrat m-r-5">60%</span>Higher
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-sm-7">
+              <div class="row">
+                <div class="col-sm-6">
+                 <div class="panel panel-default">
+                <div class="panel-body">                
+                 <div class="panel-body">
+                        <div class="row">
+                          <div class="col-md-10">
+                            <div class="irs-wrapper blue">
+                              <span class="irs js-irs-5 irs-with-grid"><span class="irs"><span class="irs-line"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">1 000 €</span><span class="irs-max" style="visibility: hidden;">100 000 €</span><span class="irs-from" style="visibility: visible; left: 25.0128%;">30 000 €</span><span class="irs-to" style="visibility: visible; left: 83.6598%;">90 000 €</span><span class="irs-single" style="visibility: hidden; left: 48.7807%;">30 000 € — 90 000 €</span></span><span class="irs-grid" style="width: 96.7677%; left: 1.51616%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -2.9293%;">1 000</span><span class="irs-grid-pol small" style="left: 20%"></span><span class="irs-grid-pol small" style="left: 15%"></span><span class="irs-grid-pol small" style="left: 10%"></span><span class="irs-grid-pol small" style="left: 5%"></span><span class="irs-grid-pol" style="left: 25%"></span><span class="irs-grid-text js-grid-text-1" style="left: 25%; visibility: visible; margin-left: -3.33333%;">25 750</span><span class="irs-grid-pol small" style="left: 45%"></span><span class="irs-grid-pol small" style="left: 40%"></span><span class="irs-grid-pol small" style="left: 35%"></span><span class="irs-grid-pol small" style="left: 30%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-2" style="left: 50%; visibility: visible; margin-left: -3.33333%;">50 500</span><span class="irs-grid-pol small" style="left: 70%"></span><span class="irs-grid-pol small" style="left: 65%"></span><span class="irs-grid-pol small" style="left: 60%"></span><span class="irs-grid-pol small" style="left: 55%"></span><span class="irs-grid-pol" style="left: 75%"></span><span class="irs-grid-text js-grid-text-3" style="left: 75%; visibility: visible; margin-left: -3.43434%;">75 250</span><span class="irs-grid-pol small" style="left: 95%"></span><span class="irs-grid-pol small" style="left: 90%"></span><span class="irs-grid-pol small" style="left: 85%"></span><span class="irs-grid-pol small" style="left: 80%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-4" style="left: 100%; margin-left: -3.83839%;">100 000</span></span><span class="irs-bar" style="left: 29.9623%; width: 58.6471%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from" style="left: 28.3461%;"></span><span class="irs-slider to" style="left: 86.9932%;"></span></span><input type="text" id="example_2" name="example_name" value="30000;90000" class="irs-hidden-input">
+                            </div>           
+                          </div>
+                        </div>
+                      </div>
+                       </div>
+              </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="widget-8 panel no-border bg-success no-margin widget-loader-bar">
+                    <div class="container-xs-height full-height">
+                      <div class="row-xs-height">
+                        <div class="col-xs-height col-top">
+                          <div class="panel-heading top-left top-right">
+                            <div class="panel-title text-black hint-text">
+                              <span class="font-montserrat fs-11 all-caps">PRIX RECOMMANDE <i class="fa fa-chevron-right"></i>
+                              </span>
+                            </div>
+                            <div class="panel-controls">
+                              <ul>
+                                <li>
+                                  <a data-toggle="refresh" class="portlet-refresh text-black" href="#"><i class="portlet-icon portlet-icon-refresh"></i></a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row-xs-height ">
+                        <div class="col-xs-height col-top relative">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="p-l-20">
+                                <h3 class="no-margin p-b-5 text-white">14,000 dh</h3>
+                                <p class="small hint-text m-t-5">
+                                  <span class="label  font-montserrat m-r-5">60%</span>Higher
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div id="rootwizard" class="m-t-50">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs nav-tabs-linetriangle nav-tabs-separator nav-stack-sm">
+                  <li class="active">
+                    <a data-toggle="tab" href="#tab1"><i class="fa fa-shopping-cart tab-icon"></i> <span>Your cart</span></a>
+                  </li>
+                  <li class="">
+                    <a data-toggle="tab" href="#tab2"><i class="fa fa-truck tab-icon"></i> <span>Shipping information</span></a>
+                  </li>
+                  <li class="">
+                    <a data-toggle="tab" href="#tab3"><i class="fa fa-credit-card tab-icon"></i> <span>Payment details</span></a>
+                  </li>
+                  <li class="">
+                    <a data-toggle="tab" href="#tab4"><i class="fa fa-check tab-icon"></i> <span>Summary</span></a>
+                  </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div class="tab-pane padding-20 active slide-left" id="tab1">
+                    <div class="row row-same-height">
+                      <div class="col-md-5 b-r b-dashed b-grey sm-b-b">
+                        <div class="padding-30 m-t-50">
+                          <i class="fa fa-shopping-cart fa-2x hint-text"></i>
+                          <h2>Your Bags are ready to check out!</h2>
+                          <p>Discover goods you'll love from brands that inspire. The easiest way to open your own online store.
+                            Discover amazing stuff or open your own store for free!</p>
+                          <p class="small hint-text">Below is a sample page for your cart , Created using pages design UI Elementes</p>
+                        </div>
+                      </div>
+                      <div class="col-md-7">
+                        <div class="padding-30">
+                          <table class="table table-condensed">
+                            <tbody>
+                              <tr>
+                                <td class="col-lg-8 col-md-6 col-sm-7 ">
+                                  <a href="#" class="remove-item"><i class="pg-close"></i></a>
+                                  <span class="m-l-10 font-montserrat fs-18 all-caps">Webarch UI Framework</span>
+                                  <span class="m-l-10 ">Dashboard UI Pack</span>
+                                </td>
+                                <td class=" col-lg-2 col-md-3 col-sm-3 text-right">
+                                  <span>Qty 1</span>
+                                </td>
+                                <td class=" col-lg-2 col-md-3 col-sm-2 text-right">
+                                  <h4 class="text-primary no-margin font-montserrat">$27</h4>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="col-lg-8 col-md-6 col-sm-7">
+                                  <a href="#" class="remove-item"><i class="pg-close"></i></a>
+                                  <span class="m-l-10 font-montserrat fs-18 all-caps">Pages UI Framework</span>
+                                  <span class="m-l-10 ">Next Gen UI Pack</span>
+                                </td>
+                                <td class="col-lg-2 col-md-3 col-sm-3 text-right">
+                                  <span>Qty 1</span>
+                                </td>
+                                <td class=" col-lg-2 col-md-3 col-sm-2 text-right">
+                                  <h4 class="text-primary no-margin font-montserrat">$27</h4>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <h5>Donation</h5>
+                          <div class="row">
+                            <div class="col-lg-7 col-md-6">
+                              <p class="no-margin">Donate now and give clean, safe water to those in need. </p>
+                              <p class="small hint-text">
+                                100% of your donation goes to the field, and you can track the progress of every dollar spent.
+                                <a href="#">Click Here</a>
+                              </p>
+                            </div>
+                            <div class="col-lg-5 col-md-6">
+                              <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default active">
+                                <input type="radio" name="options" id="option1" checked=""> <span class="fs-16">$0</span>
+                              </label>
+                                <label class="btn btn-default">
+                                <input type="radio" name="options" id="option2"> <span class="fs-16">$10</span>
+                              </label>
+                                <label class="btn btn-default">
+                                <input type="radio" name="options" id="option3"> <span class="fs-16">$20</span>
+                              </label>
+                              </div>
+                            </div>
+                          </div>
+                          <br>
+                          <div class="container-sm-height">
+                            <div class="row row-sm-height b-a b-grey">
+                              <div class="col-sm-3 col-sm-height col-middle p-l-10 sm-padding-15">
+                                <h5 class="font-montserrat all-caps small no-margin hint-text bold">Discount (10%)</h5>
+                                <p class="no-margin">$10</p>
+                              </div>
+                              <div class="col-sm-7 col-sm-height col-middle sm-padding-15 ">
+                                <h5 class="font-montserrat all-caps small no-margin hint-text bold">Donations</h5>
+                                <p class="no-margin">$0</p>
+                              </div>
+                              <div class="col-sm-2 text-right bg-primary col-sm-height col-middle padding-10">
+                                <h5 class="font-montserrat all-caps small no-margin hint-text text-white bold">Total</h5>
+                                <h4 class="no-margin text-white">$44</h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane slide-left padding-20" id="tab2">
+                    <div class="row row-same-height">
+                      <div class="col-md-5 b-r b-dashed b-grey ">
+                        <div class="padding-30 m-t-50">
+                          <h2>Your Information is safe with us!</h2>
+                          <p>We respect your privacy and protect it with strong encryption, plus strict policies . Two-step
+                            verification, which we encourage all our customers to use.</p>
+                          <p class="small hint-text">Below is a sample page for your cart , Created using pages design UI Elementes</p>
+                        </div>
+                      </div>
+                      <div class="col-md-7">
+                        <div class="padding-30">
+                          <form role="form">
+                            <p>Name and Email Address</p>
+                            <div class="form-group-attached">
+                              <div class="row clearfix">
+                                <div class="col-sm-6">
+                                  <div class="form-group form-group-default required">
+                                    <label>First name</label>
+                                    <input type="text" class="form-control" required="">
+                                  </div>
+                                </div>
+                                <div class="col-sm-6">
+                                  <div class="form-group form-group-default">
+                                    <label>Last name</label>
+                                    <input type="text" class="form-control">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form-group form-group-default required">
+                                <label>Email</label>
+                                <input type="text" class="form-control" required="">
+                              </div>
+                            </div>
+                            <br>
+                            <p>Billing Address</p>
+                            <div class="form-group-attached">
+                              <div class="form-group form-group-default required">
+                                <label>Address</label>
+                                <input type="text" class="form-control" placeholder="Current address" required="">
+                              </div>
+                              <div class="row clearfix">
+                                <div class="col-sm-6">
+                                  <div class="form-group form-group-default required form-group-default-selectFx">
+                                    <label>Country</label>
+                                    <div class="cs-wrapper">
+                                      <div class="cs-select cs-skin-slide cs-transparent form-control" tabindex="0">
+                                        <div class="cs-options">
+                                          <ul>
+                                            <li data-option="" data-value="AF"><span>Afghanistan</span></li>
+                                            <li data-option="" data-value="AX"><span>Åland Islands</span></li>
+                                            <li data-option="" data-value="AL"><span>Albania</span></li>
+                                            <li data-option="" data-value="DZ"><span>Algeria</span></li>
+                                            <li data-option="" data-value="AS"><span>American Samoa</span></li>
+                                            <li data-option="" data-value="AD"><span>Andorra</span></li>
+                                            <li data-option="" data-value="AO"><span>Angola</span></li>
+                                            <li data-option="" data-value="AI"><span>Anguilla</span></li>
+                                            <li data-option="" data-value="AQ"><span>Antarctica</span></li>
+                                         
+                                          </ul>
+                                        </div><select class="cs-select cs-skin-slide cs-transparent form-control" data-init-plugin="cs-select">
+                                    <option value="AF">Afghanistan</option>
+                                    <option value="AX">Åland Islands</option>
+                                    <option value="AL">Albania</option>
+                                    <option value="DZ">Algeria</option>
+                                    <option value="AS">American Samoa</option>
+                                    <option value="AD">Andorra</option>
+                                    <option value="AO">Angola</option>
+                                    <option value="AI">Anguilla</option>
+                                  
+                                  </select>
+                                        <div class="cs-backdrop"></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-sm-6">
+                                  <div class="form-group form-group-default">
+                                    <label>City</label>
+                                    <input type="text" class="form-control">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row clearfix">
+                                <div class="col-sm-9">
+                                  <div class="form-group form-group-default required">
+                                    <label>State/Province</label>
+                                    <input type="text" class="form-control" placeholder="Outside US/Canada" required="">
+                                  </div>
+                                </div>
+                                <div class="col-sm-3">
+                                  <div class="form-group form-group-default">
+                                    <label>Zip code</label>
+                                    <input type="text" class="form-control">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form-group form-group-default input-group">
+                                <span class="input-group-addon">
+                                <div class="cs-wrapper"><div class="cs-select cs-skin-slide cs-transparent" tabindex="0"><div class="cs-options"><ul><li data-option="" data-value="44"><span>UK (+44)</span></li>
+                                <li data-option="" data-value="1"><span>USA (+1)</span></li>
+                                <li data-option="" data-value="213"><span>Algeria (+213)</span></li>
+                                <li data-option="" data-value="376"><span>Andorra (+376)</span></li>
+                                <li data-option="" data-value="244"><span>Angola (+244)</span></li>
+                                <li data-option="" data-value="1264"><span>Anguilla (+1264)</span></li>
+                                <li data-option="" data-value="1268"><span>Antigua &amp; Barbuda (+1268)</span></li>
+                                <li data-option="" data-value="54"><span>Argentina (+54)</span></li>
+                                <li data-option="" data-value="374"><span>Armenia (+374)</span></li>
+                                <li data-option="" data-value="297"><span>Aruba (+297)</span></li>
+                                <li data-option="" data-value="61"><span>Australia (+61)</span></li>
+                            
+                                </ul>
+                              </div><select class="cs-select cs-skin-slide cs-transparent" data-init-plugin="cs-select">
+                                            <option data-countrycode="GB" value="44" selected="">UK (+44)</option>
+                                            <option data-countrycode="US" value="1">USA (+1)</option>
+                                            <option data-countrycode="DZ" value="213">Algeria (+213)</option>
+                                            <option data-countrycode="AD" value="376">Andorra (+376)</option>
+                                            <option data-countrycode="AO" value="244">Angola (+244)</option>
+                                            <option data-countrycode="AI" value="1264">Anguilla (+1264)</option>
+                                            <option data-countrycode="AG" value="1268">Antigua &amp; Barbuda (+1268)</option>
+                                  
+                                        </select>
+                              <div class="cs-backdrop"></div>
+                            </div>
+                        </div>
+                        </span>
+                        <label>Phone number</label>
+                        <input type="text" class="form-control" placeholder="For verification purpose">
+                      </div>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane slide-left padding-20" id="tab3">
+              <div class="row row-same-height">
+                <div class="col-md-5 b-r b-dashed b-grey ">
+                  <div class="padding-30 m-t-50">
+                    <h2>We Secured Your Line</h2>
+                    <p>Below is a sample page for your cart , Created using pages design UI Elementes</p>
+                    <p class="small hint-text">Below is a sample page for your cart , Created using pages design UI Elementes</p>
+                    <table class="table table-condensed">
+                      <tbody>
+                        <tr>
+                          <td class=" col-md-9">
+                            <span class="m-l-10 font-montserrat fs-18 all-caps">Webarch UI Framework</span>
+                            <span class="m-l-10 ">Dashboard UI Pack</span>
+                          </td>
+                          <td class=" col-md-3 text-right">
+                            <span>Qty 1</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class=" col-md-9">
+                            <span class="m-l-10 font-montserrat fs-18 all-caps">Pages UI Framework</span>
+                            <span class="m-l-10 ">Next Gen UI Pack</span>
+                          </td>
+                          <td class=" col-md-3 text-right">
+                            <span>Qty 1</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2" class=" col-md-3 text-right">
+                            <h4 class="text-primary no-margin font-montserrat">$27</h4>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="small">Invoice are issued on the date of despatch. Payment terms: Pre-orders: within 10 days of invoice date
+                      with 4% discount, from the 11th to the 30th day net. Re-orders: non-reduced stock items are payable
+                      net after 20 days. </p>
+                    <p class="small">By pressing Pay Now You will Agree to the Payment <a href="#">Terms &amp; Conditions</a></p>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <div class="padding-30">
+                    <ul class="list-unstyled list-inline m-l-30">
+                      <li><a href="#" class="p-r-30 text-black">Credit card</a></li>
+                      <li><a href="#" class="p-r-30 text-black  hint-text">PayPal</a></li>
+                      <li><a href="#" class="p-r-30 text-black  hint-text">Wire transfer</a></li>
+                    </ul>
+                    <form role="form">
+                      <div class="bg-master-light padding-30 b-rad-lg">
+                        <h2 class="pull-left no-margin">Credit Card</h2>
+                        <ul class="list-unstyled pull-right list-inline no-margin">
+                          <li>
+                            <a href="#">
+                              <img width="51" height="32" data-src-retina="assets/img/form-wizard/visa2x.png" data-src="assets/img/form-wizard/visa.png"
+                                class="brand" alt="logo" src="assets/img/form-wizard/visa.png">
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" class="hint-text">
+                              <img width="51" height="32" data-src-retina="assets/img/form-wizard/amex2x.png" data-src="assets/img/form-wizard/amex.png"
+                                class="brand" alt="logo" src="assets/img/form-wizard/amex.png">
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" class="hint-text">
+                              <img width="51" height="32" data-src-retina="assets/img/form-wizard/mastercard2x.png" data-src="assets/img/form-wizard/mastercard.png"
+                                class="brand" alt="logo" src="assets/img/form-wizard/mastercard.png">
+                            </a>
+                          </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                        <div class="form-group form-group-default required m-t-25">
+                          <label>Card holder's name</label>
+                          <input type="text" class="form-control" placeholder="Name on the card" required="">
+                        </div>
+                        <div class="form-group form-group-default required">
+                          <label>Card number</label>
+                          <input type="text" class="form-control" placeholder="8888-8888-8888-8888" required="">
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label>Expiration</label>
+                            <br>
+                            <div class="cs-wrapper">
+                              <div class="cs-select cs-skin-slide" tabindex="0">
+                                <div class="cs-options">
+                                  <ul>
+                                    <li data-option="" data-value="Jan (01)"><span>Jan (01)</span></li>
+                                    <li data-option="" data-value="Feb (02)"><span>Feb (02)</span></li>
+                                    <li data-option="" data-value="Mar (03)"><span>Mar (03)</span></li>
+                                    <li data-option="" data-value="Apr (04)"><span>Apr (04)</span></li>
+                                    <li data-option="" data-value="May (05)"><span>May (05)</span></li>
+                                    <li data-option="" data-value="Jun (06)"><span>Jun (06)</span></li>
+                                    <li data-option="" data-value="Jul (07)"><span>Jul (07)</span></li>
+                                    <li data-option="" data-value="Aug (08)"><span>Aug (08)</span></li>
+                                   
+                                  </ul>
+                                </div><select class="cs-select cs-skin-slide" data-init-plugin="cs-select">
+                                  <option selected="">Jan (01)</option>
+                                  <option>Feb (02)</option>
+                                  <option>Mar (03)</option>
+                                  <option>Apr (04)</option>
+                                  <option>May (05)</option>
+                                  <option>Jun (06)</option>
+                                  <option>Jul (07)</option>
+                                  <option>Aug (08)</option>
+                                  <option>Sep (09)</option>
+                                  <option>Oct (10)</option>
+                                  <option>Nov (11)</option>
+                                  <option>Dec (12)</option>
+                                </select>
+                                <div class="cs-backdrop"></div>
+                              </div>
+                            </div>
+                            <div class="cs-wrapper">
+                              <div class="cs-select cs-skin-slide" tabindex="0">
+                                <div class="cs-options">
+                                  <ul>
+                                    <li data-option="" data-value="2014"><span>2014</span></li>
+                                    <li data-option="" data-value="2015"><span>2015</span></li>
+                                    <li data-option="" data-value="2016"><span>2016</span></li>
+                                    <li data-option="" data-value="2017"><span>2017</span></li>
+                                    <li data-option="" data-value="2018"><span>2018</span></li>
+                                    <li data-option="" data-value="2019"><span>2019</span></li>
+                                    <li data-option="" data-value="2020"><span>2020</span></li>
+                                 
+                                  </ul>
+                                </div><select class="cs-select cs-skin-slide" data-init-plugin="cs-select">
+                                  <option value="2014">2014</option>
+                                  <option value="2015">2015</option>
+                                  <option value="2016">2016</option>
+                                  <option value="2017">2017</option>
+                                  <option value="2018">2018</option>
+                                  <option value="2019">2019</option>
+                                  <option value="2020">2020</option>
+                             
+                                </select>
+                                <div class="cs-backdrop"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-2 col-md-offset-4">
+                            <div class="form-group required">
+                              <label>CVC Code</label>
+                              <input type="text" class="form-control" placeholder="000" required="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane slide-left padding-20" id="tab4">
+              <h1>Thank you.</h1>
+            </div>
+            <div class="padding-20 bg-white">
+              <ul class="pager wizard">
+                <li class="next">
+                  <button class="btn btn-primary btn-cons btn-animated from-left fa fa-truck pull-right" type="button">
+                        <span>Next</span>
+                      </button>
+                </li>
+                <li class="next finish hidden" style="display: none;">
+                  <button class="btn btn-primary btn-cons btn-animated from-left fa fa-cog pull-right" type="button">
+                        <span>Finish</span>
+                      </button>
+                </li>
+                <li class="previous first hidden disabled">
+                  <button class="btn btn-default btn-cons pull-right" type="button">
+                        <span>First</span>
+                      </button>
+                </li>
+                <li class="previous disabled">
+                  <button class="btn btn-default btn-cons pull-right" type="button">
+                        <span>Previous</span>
+                      </button>
+                </li>
+              </ul>
+            </div>
+            <div class="wizard-footer padding-20 bg-master-light">
+              <p class="small hint-text pull-left no-margin">
+                The Top Content Is Soley Created using pages UI Elements such as Invoice, Tabs, Form Layouts etc. and are prior for representation
+                Purpose Only.
+              </p>
+              <div class="pull-right">
+                <img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png"  width="50">
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+    <!-- END PAGE CONTENT -->
+    <!-- START COPYRIGHT -->
+    <!-- START CONTAINER FLUID -->
+    
+    <!-- END COPYRIGHT -->
+  </div>
+
+
+      </div>
+      <!-- END PAGE CONTENT WRAPPER -->
+    </div>
+
+
+    <!-- END PAGE CONTAINER -->
+    <!--START QUICKVIEW -->
+    <div class="container-fluid container-fixed-lg footer">
+      <div class="copyright sm-text-center">
+        <p class="small no-margin pull-left sm-pull-reset">
+          <span class="hint-text">Copyright &copy; 2014 </span>
+          <span class="font-montserrat">REVOX</span>.
+          <span class="hint-text">All rights reserved. </span>
+          <span class="sm-block"><a href="#" class="m-l-10 m-r-10">Terms of use</a> | <a href="#" class="m-l-10">Privacy Policy</a></span>
+        </p>
+        <p class="small no-margin pull-right sm-pull-reset">
+          <a href="#">Hand-crafted</a> <span class="hint-text">&amp; Made with Love ®</span>
+        </p>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+
+    <!-- START recherch -->
+    <div class="overlay hide" data-pages="search">
+      <!-- BEGIN Overlay Content !-->
+      <div class="overlay-content has-results m-t-20">
+        <!-- BEGIN Overlay Header !-->
+        <div class="container-fluid">
+          <!-- BEGIN Overlay Logo !-->
+          <img class="overlay-brand" src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" data-src-retina="assets/img/logo_2x.png"
+            width="90">
+          <!-- END Overlay Logo !-->
+          <!-- BEGIN Overlay Close !-->
+          <a href="#" class="close-icon-light overlay-close text-black fs-16">
+            <i class="pg-close"></i>
+          </a>
+          <!-- END Overlay Close !-->
+        </div>
+        <!-- END Overlay Header !-->
+        <div class="container-fluid">
+          <!-- BEGIN Overlay Controls !-->
+          <input id="overlay-search" class="no-border overlay-search bg-transparent" placeholder="Search..." autocomplete="off" spellcheck="false">
+          <br>
+          <div class="inline-block">
+            <div class="checkbox right">
+              <input id="checkboxn" type="checkbox" value="1" checked="checked">
+              <label for="checkboxn"><i class="fa fa-search"></i> Search within page</label>
+            </div>
+          </div>
+          <div class="inline-block m-l-10">
+            <p class="fs-13">Press enter to search</p>
+          </div>
+          <!-- END Overlay Controls !-->
+        </div>
+        <!-- BEGIN Overlay Search Results, This part is for demo purpose, you can add anything you like !-->
+        <div class="container-fluid">
+          <span>
+                <strong>suggestions :</strong>
+            </span>
+          <span id="overlay-suggestions"></span>
+          <br>
+          <div class="search-results m-t-40">
+            <p class="bold">Pages Search Results</p>
+
+          </div>
+        </div>
+        <!-- END Overlay Search Results !-->
+      </div>
+    </div>
+    <!-- end recherch !-->
+
+    <!--js de menu et recherch -->
+    <script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/modernizr.custom.js" type="text/javascript"></script>
+    <script src="assets/plugins/boostrapv3/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <!-- js tables-->
+    <script src="assets/plugins/jquery-datatable/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-datatable/media/js/dataTables.bootstrap.js" type="text/javascript"></script>
+    <script type="text/javascript" src="assets/plugins/datatables-responsive/js/datatables.responsive.js"></script>
+    <script type="text/javascript" src="assets/plugins/datatables-responsive/js/lodash.min.js"></script>
+    <!-- js wedget-->
+    <script src="assets/plugins/jquery-metrojs/MetroJs.min.js" type="text/javascript"></script>
+
+     <script type="text/javascript" src="assets/plugins/classie/classie.js"></script>
+      <script src="assets/plugins/boostrap-form-wizard/js/jquery.bootstrap.wizard.min.js" type="text/javascript"></script>
+
+    <!-- BEGIN CORE TEMPLATE JS -->
+    <script src="pages/js/pages.min.js"></script>
+    <!-- END CORE TEMPLATE JS -->
+    <!-- BEGIN PAGE LEVEL JS -->
+ 
+    <script src="assets/js/scripts.js" type="text/javascript"></script>
+    <script src="assets/js/widgets.js"></script>
+     <script src="assets/js/form_wizard.js" type="text/javascript"></script>
+     <script src="assets/js/demo.js" type="text/javascript"></script>
+
+    <!-- END PAGE LEVEL JS -->
+</body>
+
+</html>

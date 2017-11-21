@@ -1,0 +1,146 @@
+/*
+
+* Override Pages default styles or create your own styles here
+
+*/
+
+/**/
+@media(min-width:768px){
+    .facebook-col{
+        padding: 0px 7px 0px 15px; 
+    }
+
+    .google-col{
+        padding: 0 15px 0 7px;
+    }
+}
+
+
+.google-col button{
+    width: 100%;
+}
+.facebook-col button{
+    width: 100%;
+}
+
+
+.btn-facebook:hover{
+    background-color: rgba(62, 92, 154, 0.79);
+    color: white;
+    border-color: rgba(62, 92, 154, 0.79);
+}
+
+.btn-facebook.active,
+.btn-facebook:active,
+.btn-facebook.active:focus,
+.btn-facebook:active:focus,
+.btn-facebook:active:hover,
+.dropdown-toggle.btn-facebook {
+    background-color: #3e5c9a;
+    color: white;
+    border-color: #3e5c9a;
+}
+
+.btn-facebook{
+    background-color: #3e5c9a;
+    color: white;
+    border-color: #3e5c9a;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" 1;
+    -moz-font-feature-settings: "kern" 1;
+    margin-bottom: 0;
+    border: 1px solid #f0f0f0;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    background-image: none !important;
+    text-shadow: none;
+    box-shadow: none;
+    line-height: 21px;
+    padding: 6px 17px;
+    position: relative;
+    transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s !important;
+}
+
+.login-box{
+    background-color:rgba(0,0,0,0.5);
+    border-radius: 2px;
+}
+
+.subscribtion{
+    color: #0a8666;
+}
+
+.small-logo-main img {
+    padding-top: 12px;
+}
+
+.modal-dialog{
+    overflow-y: initial !important
+}
+
+.accessoires div div.checkbox{
+    margin-top : 7.5px; 
+}
+
+
+/*costume css*/
+.a-red{
+    color : #d21010;
+}
+
+.a-red:hover{
+    color : #d21010;
+}
+
+@media (max-width: 768px){
+    .modal.slide-up .modal-dialog {
+        width: calc(100% - 30px);
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+
+@media (min-width: 992px){
+    .modal-lg {
+        width: 1200px;
+    }
+    .modal-body{
+        height: 400px;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+
+@media (min-width: 1300px){
+    .modal-lg {
+        width: 1400px;
+    }
+    .modal-body{
+        height: 600px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.badge{
+    float: right;
+    margin-top: 4px; 
+}
+
+.text-decoration-none{
+    text-decoration: none;
+    color: inherit;
+}
+
