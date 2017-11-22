@@ -1,6 +1,10 @@
 # VirtualStock
 controle mangemeny system and exchange plateforme for electronique parts controle mangemeny system and exchange plateforme for electronique parts http://www.virtualstock.ma
 
+# Special Brach for hicham 
+
+This branch will never be pulled to master 
+
 # How to deploy for developpers 
 
 1 - install <a href="https://getcomposer.org/">composer</a> <br>
