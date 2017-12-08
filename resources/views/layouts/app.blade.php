@@ -13,22 +13,22 @@
   <meta content="" name="description" />
   <meta content="" name="author"/>
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <link href="http://virtuelstock.ma/assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" />
-  <link href="http://virtuelstock.ma/assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="http://virtuelstock.ma/assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" media="screen" />
-  <link href="http://virtuelstock.ma/assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+  <link href="{{ URL::asset('assets/plugins/pace/pace-theme-flash.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ URL::asset('assets/plugins/boostrapv3/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ URL::asset('assets/plugins/jquery-scrollbar/jquery.scrollbar.css') }}" rel="stylesheet" type="text/css" media="screen" />
+  <link href="{{ URL::asset('assets/plugins/font-awesome/css/font-awesome.css') }}" rel="stylesheet" type="text/css">
   @yield('css')
   <!-- start table-->
-  <link href="http://virtuelstock.ma/assets/plugins/jquery-datatable/media/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="http://virtuelstock.ma/assets/plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min.css" rel="stylesheet" type="text/css" />
-  <link href="http://virtuelstock.ma/assets/plugins/datatables-responsive/css/datatables.responsive.css" rel="stylesheet" type="text/css" media="screen"/>
+  <link href="{{ URL::asset('assets/plugins/jquery-datatable/media/css/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ URL::asset('assets/plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ URL::asset('assets/plugins/datatables-responsive/css/datatables.responsive.css') }}" rel="stylesheet" type="text/css" media="screen"/>
   <!-- end table-->
   <!-- start wedget-->
-  <link href="http://virtuelstock.ma/assets/plugins/jquery-metrojs/MetroJs.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="{{ URL::asset('assets/plugins/jquery-metrojs/MetroJs.css') }}" rel="stylesheet" type="text/css" media="screen" />
   <!-- end wedget-->
-  <link href="http://virtuelstock.ma/pages/css/pages-icons.css" rel="stylesheet" type="text/css">
-  <link class="main-stylesheet" href="http://virtuelstock.ma/pages/css/pages.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="http://virtuelstock.ma/assets/css/style.css" class='costume-stylesheet'>
+  <link href="{{ URL::asset('pages/css/pages-icons.css') }}" rel="stylesheet" type="text/css">
+  <link class="main-stylesheet" href="{{ URL::asset('pages/css/pages.css') }}" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="{{ URL::asset('assets/css/style.css') }}" class='costume-stylesheet'>
 </head>
 
 <script>
@@ -44,7 +44,7 @@
     <!-- BEGIN SIDEBAR MENU HEADER-->
     <div class="sidebar-header">
       <!-- logo -->
-      <img src="http://virtuelstock.ma/assets/img/logo-white.png" alt="logo" class="brand" data-src="http://virtuelstock.ma/assets/img/logo-white.png" data-src-retina="http://virtuelstock.ma/assets/img/logo.png"
+      <img src="{{ URL::asset('assets/img/logo-white.png') }}" alt="logo" class="brand" data-src="{{ URL::asset('assets/img/logo-white.png') }}" data-src-retina="{{ URL::asset('assets/img/logo.png') }}"
         width="80">
         <!--end logo -->
         <div class="sidebar-header-controls">
@@ -120,7 +120,7 @@
           <div class="header-inner">
             <div class="brand inline">
               <!--logo mobile -->
-              <img src="http://virtuelstock.ma/assets/img/logo.png" alt="logo" data-src="http://virtuelstock.ma/assets/img/logo.png" data-src-retina="http://virtuelstock.ma/assets/img/logo_2x.png" width="80">
+              <img src="{{ URL::asset('assets/img/logo.png') }}" alt="logo" data-src="{{ URL::asset('assets/img/logo.png') }}" data-src-retina="{{ URL::asset('assets/img/logo_2x.png') }}" width="80">
               <!-- end logo mobile -->
             </div>
           </div>
@@ -133,7 +133,7 @@
         <div class="header-inner">
           <!-- logo -->
           <div class="brand inline">
-            <img src="http://virtuelstock.ma/assets/img/logo.png" alt="logo" data-src="http://virtuelstock.ma/assets/img/logo.png" data-src-retina="http://virtuelstock.ma/assets/img/logo_2x.png" width="90">
+            <img src="{{ URL::asset('assets/img/logo.png') }}" alt="logo" data-src="{{ URL::asset('assets/img/logo.png') }}" data-src-retina="{{ URL::asset('assets/img/logo_2x.png') }}" width="90">
           </div>
           <!-- end logo -->
           <!-- START NOTIFICATION LIST -->
@@ -198,7 +198,7 @@
           <div class="dropdown pull-right">
             <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="thumbnail-wrapper d32 circular inline m-t-5">
-                <img src="http://virtuelstock.ma/assets/img/profiles/b.jpg" alt="" data-src="http://virtuelstock.ma/assets/img/profiles/b.jpg" data-src-retina="http://virtuelstock.ma/assets/img/profiles/b2x.jpg" width="32" height="32">
+                <img src="{{ URL::asset('assets/img/profiles/b.jpg') }}" alt="" data-src="{{ URL::asset('assets/img/profiles/b.jpg') }}" data-src-retina="{{ URL::asset('assets/img/profiles/b2x.jpg') }}" width="32" height="32">
             </span>
               </button>
             <ul class="dropdown-menu profile-dropdown" role="menu">
@@ -277,7 +277,7 @@
         <!-- BEGIN Overlay Header !-->
         <div class="container-fluid">
           <!-- BEGIN Overlay Logo !-->
-          <img class="overlay-brand" src="http://virtuelstock.ma/assets/img/logo.png" alt="logo" data-src="http://virtuelstock.ma/assets/img/logo.png" data-src-retina="http://virtuelstock.ma/assets/img/logo_2x.png"
+          <img class="overlay-brand" src="{{ URL::asset('assets/img/logo.png') }}" alt="logo" data-src="{{ URL::asset('assets/img/logo.png') }}" data-src-retina="{{ URL::asset('assets/img/logo_2x.png') }}"
             width="90">
           <!-- END Overlay Logo !-->
           <!-- BEGIN Overlay Close !-->
@@ -321,42 +321,42 @@
     <!-- end recherch !-->
 
     <!--js de menu et recherch -->
-    <script src="http://virtuelstock.ma/assets/plugins/pace/pace.min.js" type="text/javascript"></script>
-    <script src="http://virtuelstock.ma/assets/plugins/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
-    <script src="http://virtuelstock.ma/assets/plugins/modernizr.custom.js" type="text/javascript"></script>
-    <script src="http://virtuelstock.ma/assets/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="http://virtuelstock.ma/assets/plugins/boostrapv3/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="http://virtuelstock.ma/assets/plugins/jquery/jquery-easy.js" type="text/javascript"></script>
-    <script src="http://virtuelstock.ma/assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
-    <script src="http://virtuelstock.ma/assets/plugins/jquery-bez/jquery.bez.min.js"></script>
-    <script src="http://virtuelstock.ma/assets/plugins/jquery-ios-list/jquery.ioslist.min.js" type="text/javascript"></script>
-    <script src="http://virtuelstock.ma/assets/plugins/jquery-actual/jquery.actual.min.js"></script>
-    <script src="http://virtuelstock.ma/assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-    <script type="text/javascript" src="http://virtuelstock.ma/assets/plugins/bootstrap-select2/select2.min.js"></script>
-    <script type="text/javascript" src="http://virtuelstock.ma/assets/plugins/classie/classie.js"></script>
-    <script src="http://virtuelstock.ma/assets/plugins/switchery/js/switchery.min.js" type="text/javascript"></script>
-    <script src="http://virtuelstock.ma/assets/plugins/bootstrap3-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-    <script type="text/javascript" src="http://virtuelstock.ma/assets/plugins/dropzone/dropzone.min.js"></script>
-    <script type="text/javascript" src="http://virtuelstock.ma/assets/plugins/bootstrap-tag/bootstrap-tagsinput.min.js"></script>
-    <script type="text/javascript" src="http://virtuelstock.ma/assets/plugins/jquery-inputmask/jquery.inputmask.min.js"></script>
+    <script src="{{ URL::asset('assets/plugins/pace/pace.min.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/plugins/jquery/jquery-1.11.1.min.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/plugins/modernizr.custom.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/plugins/jquery-ui/jquery-ui.min.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/plugins/boostrapv3/js/bootstrap.min.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/plugins/jquery/jquery-easy.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/plugins/jquery-unveil/jquery.unveil.min.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/plugins/jquery-bez/jquery.bez.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/plugins/jquery-ios-list/jquery.ioslist.min.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/plugins/jquery-actual/jquery.actual.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/plugins/bootstrap-select2/select2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/plugins/classie/classie.js') }}"></script>
+    <script src="{{ URL::asset('assets/plugins/switchery/js/switchery.min.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/plugins/bootstrap3-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/plugins/dropzone/dropzone.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/plugins/bootstrap-tag/bootstrap-tagsinput.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/plugins/jquery-inputmask/jquery.inputmask.min.js') }}"></script>
     <!-- js tables-->
-    <script src="http://virtuelstock.ma/assets/plugins/jquery-datatable/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="http://virtuelstock.ma/assets/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js" type="text/javascript"></script>
-    <script src="http://virtuelstock.ma/assets/plugins/jquery-datatable/media/js/dataTables.bootstrap.js" type="text/javascript"></script>
-    <script type="text/javascript" src="http://virtuelstock.ma/assets/plugins/datatables-responsive/js/datatables.responsive.js"></script>
-    <script type="text/javascript" src="http://virtuelstock.ma/assets/plugins/datatables-responsive/js/lodash.min.js"></script>
+    <script src="{{ URL::asset('assets/plugins/jquery-datatable/media/js/jquery.dataTables.min.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/plugins/jquery-datatable/media/js/dataTables.bootstrap.js') }}" type="text/javascript"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/plugins/datatables-responsive/js/datatables.responsive.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/plugins/datatables-responsive/js/lodash.min.js') }}"></script>
     <!-- js wedget-->
-    <script src="http://virtuelstock.ma/assets/plugins/jquery-metrojs/MetroJs.min.js" type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/plugins/jquery-metrojs/MetroJs.min.js') }}" type="text/javascript"></script>
 
     <!-- BEGIN CORE TEMPLATE JS -->
-    <script src="http://virtuelstock.ma/pages/js/pages.min.js"></script>
+    <script src="{{ URL::asset('pages/js/pages.min.js') }}"></script>
     <!-- END CORE TEMPLATE JS -->
     <!-- BEGIN PAGE LEVEL JS -->
-    <script src="http://virtuelstock.ma/assets/js/datatables.js" type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/js/datatables.js') }}" type="text/javascript"></script>
     @yield('script')
-    <script src="http://virtuelstock.ma/assets/js/scripts.js" type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/js/scripts.js') }}" type="text/javascript"></script>
 
-    <!--<script src="http://virtuelstock.ma/assets/js/widget.js"></script>-->
+    <!--<script src="{{ URL::asset('assets/js/widget.js') }}"></script>-->
     <!-- END PAGE LEVEL JS -->
 </body>
 

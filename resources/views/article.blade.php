@@ -105,7 +105,7 @@
                             <br>
                             <div>
                                 <div class="profile-img-wrapper m-t-5 inline">
-                                    <img width="35" height="35" src="http://virtuelstock.ma/assets/img/profiles/b.jpg" alt="profile" >
+                                    <img width="35" height="35" src="{{ URL::asset('assets/img/profiles/b.jpg" alt="profile" >
                                     <div class="chat-status available">
                                     </div>
                                 </div>
@@ -219,7 +219,7 @@
                             <br>
                             <div>
                                 <div class="profile-img-wrapper m-t-5 inline">
-                                    <img width="35" height="35" src="http://virtuelstock.ma/assets/img/profiles/b.jpg" alt="profile" >
+                                    <img width="35" height="35" src="{{ URL::asset('assets/img/profiles/b.jpg" alt="profile" >
                                     <div class="chat-status available">
                                     </div>
                                 </div>
@@ -286,7 +286,7 @@
                             <br>
                             <div>
                                 <div class="profile-img-wrapper m-t-5 inline">
-                                    <img width="35" height="35" src="http://virtuelstock.ma/assets/img/profiles/b.jpg" alt="profile" >
+                                    <img width="35" height="35" src="{{ URL::asset('assets/img/profiles/b.jpg" alt="profile" >
                                     <div class="chat-status available">
                                     </div>
                                 </div>
@@ -337,13 +337,13 @@
 </div>
 @endsection
 @section('script')
-<script src="http://virtuelstock.ma/assets/plugins/switchery/js/switchery.min.js" type="text/javascript"></script>
-<script src="http://virtuelstock.ma/assets/plugins/ion-slider/js/ion.rangeSlider.min.js" type="text/javascript"></script>
-<script src="http://virtuelstock.ma/assets/js/slider.js" type="text/javascript"></script>
+<script src="{{ URL::asset('assets/plugins/switchery/js/switchery.min.js') }}" type="text/javascript"></script>
+<script src="{{ URL::asset('assets/plugins/ion-slider/js/ion.rangeSlider.min.js') }}" type="text/javascript"></script>
+<script src="{{ URL::asset('assets/js/slider.js') }}" type="text/javascript"></script>
 @endsection()
 
 @section('css')
-<link href="http://virtuelstock.ma/assets/plugins/bootstrap-select2/select2.css" rel="stylesheet" type="text/css" media="screen">
-<link href="http://virtuelstock.ma/assets/plugins/ion-slider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="http://virtuelstock.ma/assets/plugins/ion-slider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="{{ URL::asset('assets/plugins/bootstrap-select2/select2.css') }}" rel="stylesheet" type="text/css" media="screen">
+<link href="{{ URL::asset('assets/plugins/ion-slider/css/ion.rangeSlider.css') }}" rel="stylesheet" type="text/css" media="screen" />
+<link href="{{ URL::asset('assets/plugins/ion-slider/css/ion.rangeSlider.skinFlat.css') }}" rel="stylesheet" type="text/css" media="screen" />
 @endsection

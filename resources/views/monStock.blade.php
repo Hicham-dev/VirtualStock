@@ -881,12 +881,12 @@
 
 @endsection
 @section('script')
-<script src="http://virtuelstock.ma/assets/plugins/boostrap-form-wizard/js/jquery.bootstrap.wizard.min.js" type="text/javascript"></script>
-<script src="http://virtuelstock.ma/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
-<script src="http://virtuelstock.ma/assets/plugins/bootstrap-datepicker/js/locales/bootstrap-datepicker.fr.js" type="text/javascript"></script>
-<script src="http://virtuelstock.ma/assets/plugins/moment/moment.min.js"></script>
-<script src="http://virtuelstock.ma/assets/js/form_wizard.js" type="text/javascript"></script>
-<script src="http://virtuelstock.ma/assets/plugins/switchery/js/switchery.min.js" type="text/javascript"></script>
+<script src="{{ URL::asset('assets/plugins/boostrap-form-wizard/js/jquery.bootstrap.wizard.min.js') }}" type="text/javascript"></script>
+<script src="{{ URL::asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}" type="text/javascript"></script>
+<script src="{{ URL::asset('assets/plugins/bootstrap-datepicker/js/locales/bootstrap-datepicker.fr.js') }}" type="text/javascript"></script>
+<script src="{{ URL::asset('assets/plugins/moment/moment.min.js') }}"></script>
+<script src="{{ URL::asset('assets/js/form_wizard.js') }}" type="text/javascript"></script>
+<script src="{{ URL::asset('assets/plugins/switchery/js/switchery.min.js') }}" type="text/javascript"></script>
 <script>
 
 
@@ -907,16 +907,16 @@ $(document).ready(function() {
       var qte = $('#qte').val();
       if(qte>1)
       {
-        $('#alert-qte').css('display','block');
+        $('#alert-qte').css') }}('display','block');
       }
       else
       {
-        $('#alert-qte').css('display','none');
+        $('#alert-qte').css') }}('display','none');
       }
   })
     
     $('#cat').change(function(){
-      $('.cat-loading').css('display','block');
+      $('.cat-loading').css') }}('display','block');
       $('#s2id_marque a span.select2-chosen').html('');
       $('#s2id_ref a span.select2-chosen').html('');
       getAjaxField('cat','marque');
@@ -924,26 +924,26 @@ $(document).ready(function() {
       if(cat == "op")
       {
         $('#num-cpu').attr('disabled','');
-        $('#alimentation').css('display','none');
-        $('.op').css('display','block');
-        $('.ob').css('display','none');
+        $('#alimentation').css') }}('display','none');
+        $('.op').css') }}('display','block');
+        $('.ob').css') }}('display','none');
       }
       else{
         $('#num-cpu').removeAttr('disabled');
-        $('#alimentation').css('display','block');
-        $('.op').css('display','none');
-        $('.ob').css('display','block');
+        $('#alimentation').css') }}('display','block');
+        $('.op').css') }}('display','none');
+        $('.ob').css') }}('display','block');
       }
     })
 
     $('#checkbox31').change(function(){
       var isGrapgicCard = $('#checkbox31').is(':checked');
       if(isGrapgicCard){
-        $('.isGrapgicCard').css('display','block');
+        $('.isGrapgicCard').css') }}('display','block');
       }
       else
       {
-        $('.isGrapgicCard').css('display','none');
+        $('.isGrapgicCard').css') }}('display','none');
       }
     })
         
@@ -1001,7 +1001,7 @@ $(document).ready(function() {
         
 
         $('#marque').change(function(){
-          $('.ref-loading').css('display','block');
+          $('.ref-loading').css') }}('display','block');
           getAjaxField('marque','ref');
           isNeedYear($('#marque').val());
         })
@@ -1071,15 +1071,15 @@ $(document).ready(function() {
           if(cat == "op")
           {
             $('#num-cpu').attr('disabled','');
-            $('#alimentation').css('display','none');
-            $('.op').css('display','block');
-            $('.ob').css('display','none');
+            $('#alimentation').css') }}('display','none');
+            $('.op').css') }}('display','block');
+            $('.ob').css') }}('display','none');
           }
           else{
             $('#num-cpu').removeAttr('disabled');
-            $('#alimentation').css('display','block');
-            $('.op').css('display','none');
-            $('.ob').css('display','block');
+            $('#alimentation').css') }}('display','block');
+            $('.op').css') }}('display','none');
+            $('.ob').css') }}('display','block');
             }
         })
 
@@ -1113,7 +1113,7 @@ function getAjaxField(ID_field,OUTPUT_field){
                 console.log(listm);
                 console.log(content);
                 $('#'+OUTPUT_field).html('<option></option>'+content);
-                $('.loading').css('display','none');
+                $('.loading').css') }}('display','none');
               }
             });
          }
@@ -1158,7 +1158,7 @@ function getProductImage(ID){
             var listm =$.parseJSON(JSON.stringify(data));
             console.log(listm[0].image);
             $('.ProductImage').attr('src','<?=Storage::url("photos/");?>'+listm[0].image);
-            $('.loading').css('display','none');
+            $('.loading').css') }}('display','none');
           }
         });
 }
@@ -1425,7 +1425,7 @@ function showstock(){
         var content = $.parseJSON(JSON.stringify(data));
         var set = [];
         for(i=0;i<content.length;i++){
-          set[i] = {'0':'<a href="http://virtuelstock.ma/article/'+content[i][8]+'">'+content[i][0]+'</a>','1':content[i][1],'2':content[i][2],'3':content[i][3],'4':content[i][4]+' DH','5':content[i][5]+' DH','6':content[i][6]+' DH','7':content[i][7]};
+          set[i] = {'0':'<a href="{{ URL::asset("article/'+content[i][8]+'")}}>'+content[i][0]+'</a>','1':content[i][1],'2':content[i][2],'3':content[i][3],'4':content[i][4]+' DH','5':content[i][5]+' DH','6':content[i][6]+' DH','7':content[i][7]};
         }
         console.log(set);
         console.log(content);
@@ -1460,14 +1460,14 @@ $(".widget-3 .metro").liveTile();
 
 </script>
 
-<script src="http://virtuelstock.ma/assets/plugins/ion-slider/js/ion.rangeSlider.min.js" type="text/javascript"></script>
-<script src="http://virtuelstock.ma/assets/js/slider.js" type="text/javascript"></script>
+<script src="{{ URL::asset('assets/plugins/ion-slider/js/ion.rangeSlider.min.js') }}" type="text/javascript"></script>
+<script src="{{ URL::asset('assets/js/slider.js') }}" type="text/javascript"></script>
 @endsection 
 @section('css')
-<link href="http://virtuelstock.ma/assets/plugins/bootstrap-select2/select2.css" rel="stylesheet" type="text/css" media="screen">
-<link href="http://virtuelstock.ma/assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" type="text/css" media="screen">
-<link href="http://virtuelstock.ma/assets/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" type="text/css" media="screen">
-<link href="http://virtuelstock.ma/assets/css/style.css" rel="stylesheet" type="text/css" media="screen">
-<link href="http://virtuelstock.ma/assets/plugins/ion-slider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="http://virtuelstock.ma/assets/plugins/ion-slider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="{{ URL::asset('assets/plugins/bootstrap-select2/select2.css') }}" rel="stylesheet" type="text/css" media="screen">
+<link href="{{ URL::asset('assets/plugins/switchery/css/switchery.min.css') }}" rel="stylesheet" type="text/css" media="screen">
+<link href="{{ URL::asset('assets/plugins/bootstrap-datepicker/css/datepicker3.css') }}" rel="stylesheet" type="text/css" media="screen">
+<link href="{{ URL::asset('assets/css/style.css') }}" rel="stylesheet" type="text/css" media="screen">
+<link href="{{ URL::asset('assets/plugins/ion-slider/css/ion.rangeSlider.css') }}" rel="stylesheet" type="text/css" media="screen" />
+<link href="{{ URL::asset('assets/plugins/ion-slider/css/ion.rangeSlider.skinFlat.css') }}" rel="stylesheet" type="text/css" media="screen" />
 @endsection

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCRlistTable extends Migration
+class CreateCpuGenerationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateCRlistTable extends Migration
      */
     public function up()
     {
-        
-        Schema::create('CRlist', function (Blueprint $table) {
+        Schema::create('cpu_generations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idCompatibilty');
-            $table->integer('idRamType');            
+            $table->string('cpu_generation_name')->unique();
+            $table->text('description');
+            $table->timestamps();
+            $table->softDeletes();
         });
-        
     }
 
     /**
@@ -29,8 +29,6 @@ class CreateCRlistTable extends Migration
      */
     public function down()
     {
-        
-        Schema::dropIfExists('CRlist');
-        
+        Schema::dropIfExists('cpu_generations');
     }
 }

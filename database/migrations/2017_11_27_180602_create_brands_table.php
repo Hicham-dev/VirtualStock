@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CerateStockTable extends Migration
+class CreateBrandsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CerateStockTable extends Migration
      */
     public function up()
     {
-        
-        Schema::create('stock', function (Blueprint $table) {
+        Schema::create('brands', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idUser');
-            $table->string('desc');
+            $table->string('brand_name')->unique();
+            $table->text('description');
+            $table->timestamps();
+            $table->softDeletes();
         });
-        
     }
 
     /**
@@ -29,8 +29,6 @@ class CerateStockTable extends Migration
      */
     public function down()
     {
-        
-        Schema::dropIfExists('stock');
-        
+        Schema::dropIfExists('brands');
     }
 }

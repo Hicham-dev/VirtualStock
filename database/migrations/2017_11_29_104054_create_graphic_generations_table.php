@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCClistTable extends Migration
+class CreateGraphicGenerationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateCClistTable extends Migration
      */
     public function up()
     {
-        
-        Schema::create('CClist', function (Blueprint $table) {
+        Schema::create('graphic_generations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idCompatibilty');
-            $table->integer('idCpuGen');
+            $table->string('graphic_generation_name')->unique();
+            $table->text('description');
+            $table->timestamps();
+            $table->softDeletes();
         });
-        
     }
 
     /**
@@ -29,8 +29,6 @@ class CreateCClistTable extends Migration
      */
     public function down()
     {
-        
-        Schema::dropIfExists('CClist');
-        
+        Schema::dropIfExists('graphic_generations');
     }
 }

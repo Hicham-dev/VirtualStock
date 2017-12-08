@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCpuGenTable extends Migration
+class CreateRamTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateCpuGenTable extends Migration
      */
     public function up()
     {
-        
-        Schema::create('CpuGen', function (Blueprint $table) {
+        Schema::create('ram_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('desc');
+            $table->string('ram_type_name')->unique();
+            $table->integer('frequency');
+            $table->text('description');
+            $table->timestamps();
+            $table->softDeletes();
         });
-        
     }
 
     /**
@@ -28,8 +30,6 @@ class CreateCpuGenTable extends Migration
      */
     public function down()
     {
-        
-        Schema::dropIfExists('CpuGen');
-        
+        Schema::dropIfExists('ram_types');
     }
 }

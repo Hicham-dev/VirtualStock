@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCGlistTable extends Migration
+class CreateCategoryBrandTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateCGlistTable extends Migration
      */
     public function up()
     {
-        
-        Schema::create('CGlist', function (Blueprint $table) {
+        Schema::create('category_brand', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idCompatibilty');
-            $table->integer('idGraphicGen');  
-        });
-        
+            $table->integer('category_id');
+            $table->integer('brand_id');
+        });   
     }
 
     /**
@@ -29,8 +27,6 @@ class CreateCGlistTable extends Migration
      */
     public function down()
     {
-        
-        Schema::dropIfExists('CGlist');
-        
+        Schema::dropIfExists('category_brand');
     }
 }

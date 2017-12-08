@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRRefListTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateRRefListTable extends Migration
      */
     public function up()
     {
-        
-        Schema::create('RRefList', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idRef');
-            $table->integer('idRamType');
+            $table->string('category_name')->unique();
+            $table->text('description');
+            $table->timestamps();
+            $table->softDeletes();
         });
-        
     }
 
     /**
@@ -29,8 +29,6 @@ class CreateRRefListTable extends Migration
      */
     public function down()
     {
-        
-        Schema::dropIfExists('RRefList');
-        
+        Schema::dropIfExists('categories');
     }
 }

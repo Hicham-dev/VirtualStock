@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCompatibilityTable extends Migration
+class CreateCompatibilityCpuGenerationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateCompatibilityTable extends Migration
      */
     public function up()
     {
-        
-        Schema::create('Compatibilty', function (Blueprint $table) {
+        Schema::create('compatibility_cpu_generation', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idRef');
-            $table->integer('NbrCpu');
-        });
-        
+            $table->integer('compatibility_id');
+            $table->integer('cpu_generation');
+        });   
     }
 
     /**
@@ -29,8 +27,6 @@ class CreateCompatibilityTable extends Migration
      */
     public function down()
     {
-        
-        Schema::dropIfExists('Compatibilty');
-        
+        Schema::dropIfExists('compatibility_cpu_generation');   
     }
 }

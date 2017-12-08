@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRamTypeTable extends Migration
+class CreateDefaultConfigurationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateRamTypeTable extends Migration
      */
     public function up()
     {
-        
-        Schema::create('RamType', function (Blueprint $table) {
+        Schema::create('default_configurations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('frequency');
-            $table->string('desc');
+            $table->timestamps();
+            $table->softDeletes();
         });
-        
     }
 
     /**
@@ -29,8 +27,6 @@ class CreateRamTypeTable extends Migration
      */
     public function down()
     {
-        
-        Schema::dropIfExists('RamType');
-    
+        Schema::dropIfExists('default_configurations');
     }
 }

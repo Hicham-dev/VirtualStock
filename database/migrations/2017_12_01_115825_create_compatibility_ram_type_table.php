@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMarqueTable extends Migration
+class CreateCompatibilityRamTypeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateMarqueTable extends Migration
      */
     public function up()
     {
-        
-        Schema::create('marque', function (Blueprint $table) {
+        Schema::create('compatibility_ram_type', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('desc');
+            $table->integer('compatibility_id');
+            $table->integer('cpu_generation');
         });
-        
     }
 
     /**
@@ -28,8 +27,6 @@ class CreateMarqueTable extends Migration
      */
     public function down()
     {
-        
-        Schema::dropIfExists('marque');
-        
+        Schema::dropIfExists('compatibility_ram_type');    
     }
 }

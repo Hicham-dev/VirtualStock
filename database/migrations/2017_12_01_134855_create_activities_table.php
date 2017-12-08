@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTrancheTable extends Migration
+class CreateActivitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateTrancheTable extends Migration
      */
     public function up()
     {
-        
-        Schema::create('Tranche', function (Blueprint $table) {
+        Schema::create('activities', function (Blueprint $table) {
             $table->increments('id');
-            $table->Date('dateTranche');
-            $table->double('Montant');
+            $table->string('activity');
+            $table->integer('user_id');
+            $table->timestamps();
         });
-        
     }
 
     /**
@@ -29,8 +28,6 @@ class CreateTrancheTable extends Migration
      */
     public function down()
     {
-        
-        Schema::dropIfExists('Tranche');
-    
+        Schema::dropIfExists('activities');
     }
 }

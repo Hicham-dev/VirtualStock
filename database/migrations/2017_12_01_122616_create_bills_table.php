@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCatTable extends Migration
+class CreateBillsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateCatTable extends Migration
      */
     public function up()
     {
-        
-        Schema::create('cat', function (Blueprint $table) {
+        Schema::create('bills', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('desc');
+            $table->string('bill_type');
+            $table->integer('paiement_id');
+            $table->integer('seller_id');
+            $table->integer('client_id');
+            $table->timestamps();
+            $table->softDeletes();
         });
-        
     }
 
     /**
@@ -28,8 +31,6 @@ class CreateCatTable extends Migration
      */
     public function down()
     {
-        
-        Schema::dropIfExists('cat');
-        
+        Schema::dropIfExists('bills');
     }
 }

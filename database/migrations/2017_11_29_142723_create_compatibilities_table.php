@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGRefListTable extends Migration
+class CreateCompatibilitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateGRefListTable extends Migration
      */
     public function up()
     {
-        
-        Schema::create('GrefList', function (Blueprint $table) {
+        Schema::create('compatibilities', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idRef');
-            $table->integer('idGpuGen');
+            $table->string('name');
+            $table->text('description');
+            $table->timestamps();
+            $table->softDeletes();
         });
-        
     }
 
     /**
@@ -29,8 +29,6 @@ class CreateGRefListTable extends Migration
      */
     public function down()
     {
-        
-        Schema::dropIfExists('GRefList');
-        
+        Schema::dropIfExists('compatibilities');
     }
 }
